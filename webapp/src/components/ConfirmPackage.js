@@ -1,8 +1,11 @@
 import React, { Component } from "react";
-import "./Confirm.css";
 import Step from "./Step";
 
-export class Confirm extends Component {
+export class ConfirmPackage extends Component {
+  continue = (e) => {
+    e.preventDefault();
+    this.props.nextStep();
+  };
   back = (e) => {
     e.preventDefault();
     this.props.prevStep();
@@ -14,18 +17,18 @@ export class Confirm extends Component {
     return (
       <div>
         <div className="header">
-          <Step steps="4" />
+          <Step steps="2" />
         </div>
         <div className="container">
           <form>
-            {" "}
-            <h3>CONFIRM</h3>
+            <h3>CONFIRM PACKAGE</h3>
             <div>
-              <h4>Track Order</h4>
+              <br />
+              <h1>sim card & cost detials</h1>
             </div>
             <div>
               <button onClick={this.back}>Back</button>
-              <button>Confirm</button>
+              <button onClick={this.continue}>Continue</button>
             </div>
           </form>
         </div>
@@ -34,4 +37,4 @@ export class Confirm extends Component {
   }
 }
 
-export default Confirm;
+export default ConfirmPackage;

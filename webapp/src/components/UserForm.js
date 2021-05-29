@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Confirm from "./Confirm";
+import ConfirmPackage from "./ConfirmPackage";
 import FormSimCard from "./FormSimCard";
 import FormUser from "./FormUser";
 
@@ -83,6 +84,15 @@ export class UserForm extends Component {
           />
         );
       case 2:
+          return(
+            <ConfirmPackage
+            nextStep={this.nextStep}
+            prevStep={this.prevStep}
+            handleChange={this.handleChange}
+            value={value}
+          />
+          )
+      case 3:
         return (
           <FormUser
             nextStep={this.nextStep}
@@ -91,7 +101,7 @@ export class UserForm extends Component {
             value={value}
           />
         );
-      case 3:
+      case 4:
         return <Confirm prevStep={this.prevStep} value={value} />;
     }
   }

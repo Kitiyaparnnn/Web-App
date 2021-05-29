@@ -17,29 +17,35 @@ function Step({ steps }) {
             <div className="step_col">
               <h4>Step3</h4>
             </div>
+            <div className="step_col">
+              <h4>Step4</h4>
+            </div>
           </div>
         </div>
       );
     case "2":
-      return(
+      return (
         <div>
-        <div id="progress2"></div>
-        <div className="step_row">
-          <div className="step_col">
-            <h4>Step1</h4>
-          </div>
-          <div className="step_col">
-            <h4>Step2</h4>
-          </div>
-          <div className="step_col">
-            <h4>Step3</h4>
+          <div id="progress2"></div>
+          <div className="step_row">
+            <div className="step_col">
+              <h4>Step1</h4>
+            </div>
+            <div className="step_col">
+              <h4>Step2</h4>
+            </div>
+            <div className="step_col">
+              <h4>Step3</h4>
+            </div>
+            <div className="step_col">
+              <h4>Step4</h4>
+            </div>
           </div>
         </div>
-      </div>
-      )
-      case "3":
-        return(
-          <div>
+      );
+    case "3":
+      return (
+        <div>
           <div id="progress3"></div>
           <div className="step_row">
             <div className="step_col">
@@ -51,9 +57,32 @@ function Step({ steps }) {
             <div className="step_col">
               <h4>Step3</h4>
             </div>
+            <div className="step_col">
+              <h4>Step4</h4>
+            </div>
           </div>
         </div>
-        )
+      );
+    case "4":
+      return (
+        <div>
+          <div id="progress4"></div>
+          <div className="step_row">
+            <div className="step_col">
+              <h4>Step1</h4>
+            </div>
+            <div className="step_col">
+              <h4>Step2</h4>
+            </div>
+            <div className="step_col">
+              <h4>Step3</h4>
+            </div>
+            <div className="step_col">
+              <h4>Step4</h4>
+            </div>
+          </div>
+        </div>
+      );
   }
 }
 
