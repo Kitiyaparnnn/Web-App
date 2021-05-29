@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Step from "./Step";
 import Button from "@material-ui/core/Button";
 
 export class FormUser extends Component {
@@ -11,24 +12,39 @@ export class FormUser extends Component {
     this.props.prevStep();
   };
   render() {
+    const { value, handleChange } = this.props;
     return (
       <div>
-        <Button
-          variant="contained"
-          color="secondary"
-          primary={true}
-          onClick={this.continue}
-        >
-          Continue
-        </Button>
-        <Button
-          variant="contained"
-          color="secondary"
-          primary={true}
-          onClick={this.back}
-        >
-          Back
-        </Button>
+        <div className="header">
+          <Step steps="2" />
+        </div>
+        <div className="container">
+          <form>
+            <h3>USER FORM</h3>
+            <div>
+              <br />
+              <input
+                type="text"
+                placeholder="First Name"
+                onChange={handleChange("firstname")}
+                defaultValue={value.firstname}
+              ></input>
+            </div>
+            <div>
+              <br />
+              <input
+                type="text"
+                placeholder="Last Name"
+                onChange={handleChange("lastname")}
+                defaultValue={value.lastname}
+              ></input>
+            </div>
+            <div>
+              <button onClick={this.back}>Back</button>
+              <button onClick={this.continue}>Continue</button>
+            </div>
+          </form>
+        </div>
       </div>
     );
   }

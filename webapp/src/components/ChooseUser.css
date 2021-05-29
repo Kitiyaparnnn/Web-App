@@ -1,0 +1,45 @@
+.chooseUser {
+    place-items: center;
+    width: 100%;
+    height: 100vh;
+    background-color: white;
+}
+
+.chooseUser > img {
+    width: 50%;
+    padding: 30px;
+    margin-top: 50px;
+}
+
+.chooseUser > button {
+    padding: 20px;
+    border-radius: 99px;
+    font-weight: 800;
+    text-decoration: none;
+    margin-bottom: 20px;
+}
+
+.button_user {
+    background-color: rgb(253, 80, 80);
+    color: white;
+    border: none;
+}
+
+.button_user:hover {
+    cursor: pointer;
+    transition: 100ms transform ease-in;
+    transform: scale(1.08);
+}
+
+.button_admin {
+    width: 128.96px;
+    background-color: rgb(253, 241, 80);
+    color: white;
+    border: none;
+}
+
+.button_admin:hover {
+    cursor: pointer;
+    transition: 100ms transform ease-in;
+    transform: scale(1.08);
+}

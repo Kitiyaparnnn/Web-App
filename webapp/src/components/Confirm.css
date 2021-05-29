@@ -1,0 +1,16 @@
+.container > button {
+    padding: 10px;
+    border-radius: 99px;
+    font-weight: 800;
+    text-decoration: none;
+    margin: 20px;
+    background: rgb(253, 80, 80) ;
+    border: none;
+    color: white;
+}
+
+.container > button:hover {
+    cursor: pointer;
+    transition: 100ms transform ease-in;
+    transform: scale(1.08);
+}

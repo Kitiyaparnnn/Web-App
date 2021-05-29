@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Confirm from "./Confirm";
 import FormSimCard from "./FormSimCard";
 import FormUser from "./FormUser";
 
@@ -11,13 +12,14 @@ export class UserForm extends Component {
     //     speed: "",
     //   },
     // ],
-    simFor:'',
-    simTime:'',
-    simSpeed:'',
+    simFor: "",
+    simTimeSN: "",
+    simTimeDN: "",
+    simSpeed: "",
     firstname: "",
     lastname: "",
     id_card: "",
-    phone_num:'',
+    phone_num: "",
     picture: false,
     // simCard:
     // {time: Number,
@@ -30,6 +32,7 @@ export class UserForm extends Component {
     this.setState({
       step: step + 1,
     });
+    console.log(this.state);
   };
 
   //Proceed to prev step
@@ -38,19 +41,38 @@ export class UserForm extends Component {
     this.setState({
       step: step - 1,
     });
+    console.log(this.state);
   };
 
   //Handle field change
   handleChange = (input) => (e) => {
     this.setState({ [input]: e.target.value });
-    console.log(this.state);
   };
 
   render() {
     const { step } = this.state;
-    const { simFor,simTime,simSpeed, firstname, lastname, id_card, phone_num, picture } =
-      this.state;
-    const value = { simFor,simTime,simSpeed, firstname, lastname, id_card, phone_num, picture };
+    const {
+      simFor,
+      simTimeSN,
+      simTimeDN,
+      simSpeed,
+      firstname,
+      lastname,
+      id_card,
+      phone_num,
+      picture,
+    } = this.state;
+    const value = {
+      simFor,
+      simTimeSN,
+      simTimeDN,
+      simSpeed,
+      firstname,
+      lastname,
+      id_card,
+      phone_num,
+      picture,
+    };
     switch (step) {
       case 1:
         return (
@@ -61,17 +83,16 @@ export class UserForm extends Component {
           />
         );
       case 2:
-        // return <h1>FormPersonalDetails</h1>;
-        return(
-            <FormUser
+        return (
+          <FormUser
             nextStep={this.nextStep}
             prevStep={this.prevStep}
             handleChange={this.handleChange}
             value={value}
           />
-        )
+        );
       case 3:
-        return <h1>Confirm</h1>;
+        return <Confirm prevStep={this.prevStep} value={value} />;
     }
   }
 }
