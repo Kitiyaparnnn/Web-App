@@ -5,17 +5,21 @@ import Admin from "./Admin";
 import { Link } from "@material-ui/core";
 
 function ChooseUser() {
-
+  const [click,setClick] = useState(false);
+  const [click2,setClick2] = useState(false)
   //เชื่อมปุ่มกับหน้า user , admin
   return (
     <div className="chooseUser">
       <img src="https://www.contactcenterworld.com/images/company/Truemove-1200px-logo.jpg"></img>
       <br />
-       <button className="button_user" onClick=''>
+      {click && <UserForm />}
+      {click2 && <Admin />}
+       <button className="button_user" onClick={() => setClick(true)}>
         สมัครรับบริการ
-      </button>
+      </button> 
+      <a href={`/components/UserForm`}>User</a>
       <br />
-      <button className="button_admin" onClick=''>
+      <button className="button_admin" onClick={() => setClick2(true)}>
         แอดมิน
       </button>
     </div>

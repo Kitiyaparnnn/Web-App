@@ -11,6 +11,7 @@ export class FormUser extends Component {
     e.preventDefault();
     this.props.prevStep();
   };
+
   render() {
     const { value, handleChange } = this.props;
     return (
@@ -56,14 +57,16 @@ export class FormUser extends Component {
               <br />
               <input
                 type="text"
-                placeholder="Receving & Mobile No."
-                onChange={handleChange("phone_num")}
-                defaultValue={value.phone_num}
+                placeholder="Address & Mobile No."
+                onChange={handleChange("addess")}
+                defaultValue={value.address}
               ></input>
             </div>
             <div>
-              <h1>อัพโหลดรูปถ่าย</h1>
-              <h1>ถือบัตรประชาชนไว้ใกล้กับใบหน้า</h1>
+              <label>อัพโหลดรูปถ่าย</label>
+              <h1 className='label_red'>ถือบัตรประชาชนไว้ใกล้กับใบหน้า</h1>
+              <input type='file' onChange={handleChange("picture")}
+                defaultValue={value.picture}></input>
             </div>
             <div>
               <button onClick={this.back}>Back</button>

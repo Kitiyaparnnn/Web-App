@@ -39,12 +39,12 @@ export class FormSimCard extends Component {
                 onChange={handleChange("simTimeSN")}
                 defaultValue={value.simTimeSN}
               >
+                <option >Choose Time</option>
                 <option value="100">100</option>
                 <option value="200">200</option>
                 <option value="300">300</option>
                 <option value="500">500</option>
                 <option value="unlimited">Unlimited</option>
-                {/* {renderTime} */}
               </select>
             </div>
             <div>
@@ -54,11 +54,11 @@ export class FormSimCard extends Component {
                 onChange={handleChange("simTimeDN")}
                 defaultValue={value.simTimeDN}
               >
+                <option >Choose Time</option>
                 <option value="100">100</option>
                 <option value="200">200</option>
                 <option value="300">300</option>
                 <option value="500">500</option>
-                {/* {renderTime} */}
               </select>
             </div>
             <div>
@@ -68,10 +68,11 @@ export class FormSimCard extends Component {
                 onChange={handleChange("simSpeed")}
                 defaultValue={value.simSpeed}
               >
-                <option value="2">2</option>
-                <option value="4">4</option>
-                <option value="6">6</option>
-                <option value="8">8</option>
+                <option >Choose Speed</option>
+                <option value="20">20</option>
+                <option value="40">40</option>
+                <option value="60">60</option>
+                <option value="80">80</option>
                 {/* {renderTime} */}
               </select>
             </div>

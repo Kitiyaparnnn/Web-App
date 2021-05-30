@@ -9,8 +9,16 @@ export class UserForm extends Component {
     step: 1,
     // simcard: [
     //   {
-    //     time: "",
+    //     id: 1,
+    //     using: "",
+    //     timesn: "",
+    //     timedn: "",
     //     speed: "",
+    //     firstname: "",
+    //     lastname: "",
+    //     id_card: "",
+    //     address: "",
+    //     picture: null,
     //   },
     // ],
     simFor: "",
@@ -20,12 +28,8 @@ export class UserForm extends Component {
     firstname: "",
     lastname: "",
     id_card: "",
-    phone_num: "",
-    picture: false,
-    // simCard:
-    // {time: Number,
-    // speed:Number
-    // }
+    address: "",
+    picture: null,
   };
   //Proceed to next step
   nextStep = () => {
@@ -47,7 +51,11 @@ export class UserForm extends Component {
 
   //Handle field change
   handleChange = (input) => (e) => {
-    this.setState({ [input]: e.target.value });
+    if (e !== "picture") {
+      this.setState({ [input]: e.target.value });
+    } else {
+      this.setState({ [input]: e.target.files[0] });
+    }
   };
 
   render() {
@@ -60,7 +68,7 @@ export class UserForm extends Component {
       firstname,
       lastname,
       id_card,
-      phone_num,
+      address,
       picture,
     } = this.state;
     const value = {
@@ -71,7 +79,7 @@ export class UserForm extends Component {
       firstname,
       lastname,
       id_card,
-      phone_num,
+      address,
       picture,
     };
     switch (step) {
@@ -84,14 +92,13 @@ export class UserForm extends Component {
           />
         );
       case 2:
-          return(
-            <ConfirmPackage
+        return (
+          <ConfirmPackage
             nextStep={this.nextStep}
             prevStep={this.prevStep}
-            handleChange={this.handleChange}
             value={value}
           />
-          )
+        );
       case 3:
         return (
           <FormUser
