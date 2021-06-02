@@ -14,10 +14,12 @@
   width: 100%;
   position: absolute;
   /* align-items: center; */
-  margin: 30px;
+  /* margin: 30px; */
 }
 
 form div {
+  /* display: flex; */
+  /* justify-content: center; */
   margin: 10px;
   width: 100%;
   /* align-items: center; */
@@ -73,4 +75,10 @@ form button:hover {
 
 form label {
   margin: 5px;
+}
+
+#videoElement {
+	width: 500px;
+	height: 375px;
+	background-color: #666;
 }

@@ -20,17 +20,6 @@ export class FormSimCard extends Component {
           <form>
             <h3>CREATE SIM CARD</h3>
             <div>
-              <label>ใช้ซิมการ์ดสำหรับ</label>
-              <br />
-              <input
-                type="text"
-                placeholder="Using for"
-                onChange={handleChange("simFor")}
-                defaultValue={value.simFor}
-              ></input>
-            </div>
-
-            <div>
               <label>โทรในเครือช่าย (นาที)</label>
               <br />
               <label className='label_red'>ฟรี 24 ชั่วโมง</label>
@@ -62,7 +51,7 @@ export class FormSimCard extends Component {
               </select>
             </div>
             <div>
-              <label>ความเร็ว (GB)</label>
+              <label>ความเร็ว full speed(GB)</label>
               <br />
               <select
                 onChange={handleChange("simSpeed")}

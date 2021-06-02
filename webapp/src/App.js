@@ -1,16 +1,15 @@
-import React, { Component } from "react";
+import React, { useState} from "react";
 import './App.css';
-import ChooseUser from "./components/ChooseUser";
 import UserForm from "./components/UserForm";
-import Admin from "./components/Admin";
+import AdminLogin from "./components/AdminLogin"
+
 
 function App() {
   return (
     <div className="App">
       {/* <h1>Try switch mode</h1> */}
-      {/* <ChooseUser /> */}
       <UserForm />
-      {/* <Admin /> */}
+      {/* <AdminLogin /> */}
     </div>
   );
 }

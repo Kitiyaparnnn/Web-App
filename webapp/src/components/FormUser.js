@@ -3,6 +3,24 @@ import Step from "./Step";
 import Button from "@material-ui/core/Button";
 
 export class FormUser extends Component {
+  state = {
+    stream: null,
+  };
+
+  // componentDidMount = () => {
+  //   if (navigator.mediaDevices.getUserMedia) {
+  //     navigator.mediaDevices
+  //       .getUserMedia({ video: true })
+  //       .then(function (stream) {
+  //         this.setState({ stream });
+  //         // video.srcObject = stream;
+  //       })
+  //       .catch(function (err0r) {
+  //         console.log("Something went wrong!");
+  //       });
+  //   }
+  // };
+
   continue = (e) => {
     e.preventDefault();
     this.props.nextStep();
@@ -12,8 +30,12 @@ export class FormUser extends Component {
     this.props.prevStep();
   };
 
+ 
   render() {
     const { value, handleChange } = this.props;
+
+    const { stream } = this.state;
+
     return (
       <div>
         <div className="header">
@@ -23,7 +45,7 @@ export class FormUser extends Component {
           <form>
             <h3>USER FORM</h3>
             <div>
-            <label>ชื่อ</label>
+              <label>ชื่อ</label>
               <br />
               <input
                 type="text"
@@ -33,7 +55,7 @@ export class FormUser extends Component {
               ></input>
             </div>
             <div>
-            <label>นามสกุล</label>
+              <label>นามสกุล</label>
               <br />
               <input
                 type="text"
@@ -43,7 +65,7 @@ export class FormUser extends Component {
               ></input>
             </div>
             <div>
-            <label>หมายเลขบัตรประชาชน</label>
+              <label>หมายเลขบัตรประชาชน</label>
               <br />
               <input
                 type="text"
@@ -53,7 +75,7 @@ export class FormUser extends Component {
               ></input>
             </div>
             <div>
-            <label>ที่อยู่รับซิม และ เบอร์โทรศัพท์</label>
+              <label>ที่อยู่รับซิม และ เบอร์โทรศัพท์</label>
               <br />
               <input
                 type="text"
@@ -63,8 +85,15 @@ export class FormUser extends Component {
               ></input>
             </div>
             <div>
-              <label>อัพโหลดรูปถ่าย</label>
-              <h1 className='label_red'>ถือบัตรประชาชนไว้ใกล้กับใบหน้า</h1>
+              <label><i class="fa fa-camera" aria-hidden="true"></i> อัพโหลดรูปถ่าย</label>
+              <h1 className="label_red">ถือบัตรประชาชนไว้ใกล้กับใบหน้า</h1>
+              {/* {
+                <video
+                  autoPlay="true"
+                  id="videoElement"
+                  srcObject={stream}
+                ></video>
+              } */}
               <input type='file' onChange={handleChange("picture")}
                 defaultValue={value.picture}></input>
             </div>

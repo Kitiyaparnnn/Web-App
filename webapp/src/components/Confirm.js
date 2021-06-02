@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component} from "react";
 import "./Confirm.css";
 import Step from "./Step";
 
@@ -8,7 +8,17 @@ export class Confirm extends Component {
     this.props.prevStep();
   };
 
+  state = { order: 0 };
+
+  updateOrder = () => {
+    const { order } = this.state;
+    this.setState({
+      order: order + 1,
+    });
+  };
+
   render() {
+    const { order } = this.state;
     const {
       value: {
         simFor,
@@ -23,10 +33,15 @@ export class Confirm extends Component {
       },
     } = this.props;
 
-    const cost = () => {
-      if (simTimeSN === "unlimited") return (+simTimeDN / 100) * 0.25 + +simSpeed;
-      else return (simTimeSN / 100 + simTimeDN / 100) * 0.25 + +simSpeed;
-    };
+    //กด confirm แล้ว เอาข้อมูล + staus ไปเก็บไว้ที่ server [ลูกค้า = {ชื่อ,ที่อยู่,แพ็กเกจซิม,สถานะ:ยังไม่ส่งสินค้า}]
+    // const [data,setData] = useState([])
+
+    // const saveData = () =>{
+    //   setData({
+    //     ...data,
+
+    //   })
+    // }
 
     return (
       <div>
@@ -36,24 +51,17 @@ export class Confirm extends Component {
         <div className="container">
           <form>
             {" "}
-            <h3>CONFIRM</h3>
-            <div>
-              <h4>Track Order : 00000</h4>
+            <h3>CONFIRM ORDER</h3>
+            <div className='order'>
+              <h4>Track Number : {order}</h4>
               <p>ชื่อ : {firstname}</p>
               <p>นามสกุล : {lastname}</p>
               <p>เลขบัตรประชาชน : {id_card}</p>
               <p>ที่อยู่ : {address}</p>
-              <p>โทรในเครือข่าย (นาที) : {simTimeSN}</p>
-              <p>โทรนอกเครือข่าย (นาที) : {simTimeDN}</p>
-              <p>ความเร็ว (GB) : {simSpeed}</p>
-              <hr />
-              <p>
-                ราคาแพ็กเกจ (บาท/เดือน) : <h3>{cost()}</h3>
-              </p>
             </div>
             <div>
               <button onClick={this.back}>Back</button>
-              <button>Confirm</button>
+              <button className='green' onClick={this.updateOrder}>Confirm</button>
             </div>
           </form>
         </div>

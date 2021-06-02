@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import ChooseUser from "./ChooseUser";
 import Confirm from "./Confirm";
 import ConfirmPackage from "./ConfirmPackage";
 import FormSimCard from "./FormSimCard";
@@ -6,7 +7,7 @@ import FormUser from "./FormUser";
 
 export class UserForm extends Component {
   state = {
-    step: 1,
+    step: 0,
     // simcard: [
     //   {
     //     id: 1,
@@ -83,6 +84,12 @@ export class UserForm extends Component {
       picture,
     };
     switch (step) {
+      case 0:
+        return (
+          <ChooseUser 
+          nextStep={this.nextStep}
+          />
+        )
       case 1:
         return (
           <FormSimCard
