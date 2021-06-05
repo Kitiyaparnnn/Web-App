@@ -40,4 +40,30 @@ input:focus {
   .table_header {
       display: flex;
       justify-content: space-between;
+      margin: 5px;
+      padding: 10px;
+  }
+
+  .vertify {
+      background-color: rgb(255, 230, 0);
+      color: #000;
+      border: none;
+      border-radius: 99px;
+  }
+  .vertify:hover{
+    cursor: pointer;
+    transition: 100ms transform ease-in;
+    transform: scale(1.03);
+  }
+
+  .delivery {
+    background-color: rgb(0, 255, 64);
+    color: #000;
+    border: none;
+      border-radius: 99px;
+  }
+  .delivery:hover{
+    cursor: pointer;
+    transition: 100ms transform ease-in;
+    transform: scale(1.03);
   }

@@ -1,73 +1,41 @@
-import React, { Component} from "react";
-import "./Confirm.css";
-import Step from "./Step";
+import React , {useState}from 'react'
+import Step from './Step'
+import './Confirm.css'
 
-export class Confirm extends Component {
-  back = (e) => {
-    e.preventDefault();
-    this.props.prevStep();
-  };
+function Confirm(props) {
+  const [order,setOrder] = useState(0)
 
-  state = { order: 0 };
+  const updateOrder = () => {
+    // setOrder(order+1)
+    // console.log(order);
+  }
 
-  updateOrder = () => {
-    const { order } = this.state;
-    this.setState({
-      order: order + 1,
-    });
-  };
-
-  render() {
-    const { order } = this.state;
-    const {
-      value: {
-        simFor,
-        simTimeSN,
-        simTimeDN,
-        simSpeed,
-        firstname,
-        lastname,
-        id_card,
-        address,
-        picture,
-      },
-    } = this.props;
-
-    //กด confirm แล้ว เอาข้อมูล + staus ไปเก็บไว้ที่ server [ลูกค้า = {ชื่อ,ที่อยู่,แพ็กเกจซิม,สถานะ:ยังไม่ส่งสินค้า}]
-    // const [data,setData] = useState([])
-
-    // const saveData = () =>{
-    //   setData({
-    //     ...data,
-
-    //   })
-    // }
-
-    return (
-      <div>
+  return (
+    <div>
+       <div>
         <div className="header">
           <Step steps="4" />
         </div>
         <div className="container">
           <form>
             {" "}
-            <h3>CONFIRM ORDER</h3>
+            <h3>CONFIRM ORDER <i class="fa fa-tag" aria-hidden="true"></i></h3>
             <div className='order'>
               <h4>Track Number : {order}</h4>
-              <p>ชื่อ : {firstname}</p>
-              <p>นามสกุล : {lastname}</p>
-              <p>เลขบัตรประชาชน : {id_card}</p>
-              <p>ที่อยู่ : {address}</p>
+              <p>ชื่อ : {props.value.firstname}</p>
+              <p>นามสกุล : {props.value.lastname}</p>
+              <p>เลขบัตรประชาชน : {props.value.id_card}</p>
+              <p>ที่อยู่ : {props.value.address}</p>
             </div>
             <div>
-              <button onClick={this.back}>Back</button>
-              <button className='green' onClick={this.updateOrder}>Confirm</button>
+              <button onClick={props.prevStep}>Back</button>
+              <button className='green' onClick={updateOrder()}>Confirm</button>
             </div>
           </form>
         </div>
       </div>
-    );
-  }
+    </div>
+  )
 }
 
-export default Confirm;
+export default Confirm

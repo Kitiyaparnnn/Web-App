@@ -3,25 +3,11 @@ import ChooseUser from "./ChooseUser";
 import Confirm from "./Confirm";
 import ConfirmPackage from "./ConfirmPackage";
 import FormSimCard from "./FormSimCard";
-import FormUser from "./FormUser";
+import FormUser from "./FormUser"
 
 export class UserForm extends Component {
   state = {
     step: 0,
-    // simcard: [
-    //   {
-    //     id: 1,
-    //     using: "",
-    //     timesn: "",
-    //     timedn: "",
-    //     speed: "",
-    //     firstname: "",
-    //     lastname: "",
-    //     id_card: "",
-    //     address: "",
-    //     picture: null,
-    //   },
-    // ],
     simFor: "",
     simTimeSN: "",
     simTimeDN: "",

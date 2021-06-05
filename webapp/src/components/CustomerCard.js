@@ -1,6 +1,16 @@
 import React from "react";
+import "./AdminLogin.css"
 
 function CustomerCard({data}) {
+const ButonStatus = (status) => {
+  if(status === "vertify"){
+    return <button className='vertify'><i class="fa fa-credit-card-alt" aria-hidden="true"></i> {status}</button>
+  }
+  else if(status === "delivery"){
+    return <button className='delivery'><i class="fa fa-plane" aria-hidden="true"></i> {status}</button>
+  }
+}
+
   return (
     <div>
       <div className="table_header">
@@ -19,8 +29,8 @@ function CustomerCard({data}) {
           {data.map((person) => (
             <tr>
               <td>
-                <i class="bi bi-person-check"></i>
-                {person.status}
+                {/* <button > {person.status}</button> */}
+               {ButonStatus(person.status)}
               </td>
               <td>{person.name}</td>
               <td>{person.address}</td>

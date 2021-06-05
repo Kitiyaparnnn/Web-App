@@ -18,7 +18,7 @@ export class FormSimCard extends Component {
         </div>
         <div className="container">
           <form>
-            <h3>CREATE SIM CARD</h3>
+            <h3>CREATE SIM CARD <i class="fa fa-phone" aria-hidden="true"></i></h3>
             <div>
               <label>โทรในเครือช่าย (นาที)</label>
               <br />

@@ -20,7 +20,7 @@ export class ConfirmPackage extends Component {
         </div>
         <div className="container">
           <form>
-            <h3>CONFIRM PACKAGE</h3>
+            <h3><i class="fa fa-gift" aria-hidden="true"></i> CONFIRM PACKAGE</h3>
             <div className="packageCost">
               <br />
               <h1>sim card & cost detials</h1>

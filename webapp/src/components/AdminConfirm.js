@@ -19,6 +19,13 @@ function AdminConfirm() {
       package: "sim2",
       status: "delivery",
     },
+    {
+      name: "A john",
+      address: "Chiang Mai,Thailand xxx-xxxxxxx",
+      picture: "id1.jpg",
+      package: "sim1",
+      status: "delivery",
+    },
   ];
 
   const [pg1, setPg1] = useState([]);
@@ -44,8 +51,8 @@ function AdminConfirm() {
 
   return (
     <div>
-      <h2>CUSTOMER LISTS</h2>
-      <CustomerCard data={pg1}/>
+      <h2><i class="fa fa-address-book" aria-hidden="true"></i> CUSTOMER LISTS</h2>
+      <CustomerCard data={pg1} />
       <CustomerCard data={pg2} />
     </div>
   );
